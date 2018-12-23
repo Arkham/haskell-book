@@ -1,10 +1,10 @@
-{-# LANGUAGE NoMonomorphismRestriction #-}
+-- {-# LANGUAGE NoMonomorphismRestriction #-}
 module DetermineTheType where
 
 example = 1
 
+exampleA :: Num a => a
 exampleA = (* 9) 6
--- exampleA :: Num a => a
 
 exampleB = head [(0, "dodge"), (1, "kitten")]
 -- exampleB :: Num a => (a, [Char])
@@ -18,7 +18,7 @@ exampleD = if False then True else False
 exampleE = length [1..5]
 -- exampleE :: Int
 
-exampleF = (length [1..5]) > (length "TACOCAT")
+exampleF = length [1..5] > length "TACOCAT"
 -- exampleF :: Bool
 
 exampleG = y * 10
@@ -82,5 +82,5 @@ aa aToc a =
   a
 
 ab :: (a -> b) -> a -> b
-ab aToB a =
-  aToB a
+ab aToB =
+  aToB
